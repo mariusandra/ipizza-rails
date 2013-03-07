@@ -11,6 +11,8 @@ module Ipizza
           Ipizza::Provider::Sampo.new.payment_request(payment)
         when :nordea
           Ipizza::Provider::Nordea.new.payment_request(payment)
+        when :lhv
+          Ipizza::Provider::Lhv.new.payment_request(payment)
         end
 
         form_tag(request.service_url, options) do
